@@ -1,0 +1,49 @@
+<%= render partial: "shared/navbar" %>
+<div class="profile_screen">
+    <div class="profile">
+        <% if @user.profileimage.attached? %>
+            <div class="profile_picture">
+                <%= image_tag @user.profileimage %>
+            </div>
+        <% else %>
+            <div class="profile_picture">
+                <%= image_tag("default.jpeg", :alt => "Default Profile Picture") %> 
+            </div>
+        <% end %>
+        <div class="profile_info">
+            <div class="username">
+                <h1><%= @user.username %></h1>
+                <% if @user.id != Current.user.id %>  
+                    <div>
+                        <% if Current.user.following?(@user) %>
+                            <%= button_to "Unfollow", friendship_path(user_id: @user), method: :delete %>
+                        <% else %>
+                            <%= button_to "Follow", friendships_path(user_id: @user), method: :post %>
+                        <% end %>
+                    </div>
+                <% else %>
+                    <%= button_to "Edit Profile", settings_path, method: :get %>
+                    <%= link_to '<i class="fas fa-cog"></i>'.html_safe, profiles_path %>
+                <% end %>
+            </div>
+            <div class="post-followers">
+                <p class="bold"><%= @user.posts.all.count %></p>
+                <p class="text">posts</p>
+                <p class="bold"><%= @user.followers.count %></p>
+                <p class="text">followers</p>
+                <p class="bold"><%= @user.following.count %></p>
+                <p class="text">following</p>
+            </div>
+            <div class="info">
+                <h3><%= @user.name %><h3>
+                <p><%= @user.bio %></p>
+                <a href="https://<%= @user.website %>" target="_blank"><%= @user.website %></a>
+            </div>
+        </div>
+    </div>
+    <div class="posts">
+        <div class="stylepost">
+            <%= render @posts %>
+        <div>
+    </div>
+</div>

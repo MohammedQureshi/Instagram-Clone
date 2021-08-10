@@ -1,0 +1,178 @@
+.Header{
+    display: flex;
+    width: 100%;
+    position: fixed;
+    padding: 3px;
+    border-bottom: 1px solid rgb(197, 197, 197);
+    background-color: white;
+    z-index: 999;
+}
+
+.MainFeed{
+    display: flex;
+    width: 100%;
+    max-width: 935px;
+    margin: 0 auto;
+    a{
+        color: black;
+    }
+}
+
+.InnerHeader{
+    display: flex;
+    max-width: 935px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+.Header img{
+    width: 120px;
+    object-fit: cover;
+}
+
+.InteractiveButtons img{
+    width: 20px;
+    height: 20px;
+    border-radius: 1rem;
+    border: 1px solid rgb(107, 107, 107);
+}
+
+.InstagramLogoMain{
+    margin-right: auto;
+}
+
+.SearchTextBox{
+    margin-left: auto;
+    margin-right: auto;
+
+    #search{
+        border-radius: 0.5rem 0 0 0.5rem;
+    }
+
+    .SearchSubmit{
+        padding-left: 5px; 
+        padding-right: 5px; 
+        height: 24px;
+        background: white;
+        border-radius: 0 0.5rem 0.5rem 0;
+        border-left: none;
+        color: rgb(107, 107, 107);
+    }
+}
+
+.SearchTextBox input{
+    margin-top: 10px;
+    text-align: center;
+    height: 22px;
+    border: 1px solid rgb(177, 177, 177);
+}
+
+.SearchTextBox input:focus{
+    outline: none;
+}
+
+
+.InteractiveButtons{
+    margin-left: auto;
+    margin-right: 10px;
+    display: flex;
+}
+
+.InteractiveButtons button{
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+    padding-left: 5px;
+    background-color: white !important;
+}
+
+.InteractiveButtons i{
+    font-size: 20px;
+}
+
+.InteractiveButtons a{
+    color: #000000;
+}
+
+.InteractiveButtons i:hover{
+    color:rgb(78, 78, 78);
+}
+
+.InstagramPost{
+    flex-grow: 1; 
+    width: 100%;
+    margin-top: 53.86px;
+    height: 92.7vh;
+    overflow-x: hidden;
+}
+
+.Post{
+    width: 99%;
+    height: 700px;
+    border: 1px solid rgb(185, 185, 185);
+    margin-bottom: 20px;
+    margin-top: 20px;
+
+    img{
+        width: 100%;
+        height: 65%;
+        object-fit: contain;
+        background-color: black;
+    }
+
+    .bold{
+        font-weight: 900;
+        padding-right: 5px;
+    }
+    .details{
+        display: flex;
+
+    }
+
+    .description{
+        padding-left: 10px;
+        padding-top: 5px;
+    }
+
+    .user_details{
+        display: flex;
+        img{
+            border-radius: 100%;
+            border: 1px solid black;
+            object-fit: contain;
+            width: 40px;
+            height: 40px;
+            margin: 15px;
+        }
+        p{
+            padding-top: 25px;
+        }
+        .dropdown{
+            margin-left:auto;
+            margin-right: 20px;
+            margin-top: 20px;
+            button{
+                background: none;
+                border: none;
+                font-size: 20px;
+            }
+        }
+    }
+}
+
+::-webkit-scrollbar {
+    width: 7px;
+  }
+  
+  ::-webkit-scrollbar-track {
+    background: #f1f1f1;
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    background: #CCCCCC;
+    border-radius: 1rem;
+  }
+  
+  ::-webkit-scrollbar-thumb:hover {
+    background: #afafaf;
+  }

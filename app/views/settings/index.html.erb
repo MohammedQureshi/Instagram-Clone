@@ -1,0 +1,87 @@
+<%= render partial: "shared/navbar" %>
+<div class="settings">
+    <div class="settings_panel">
+        <div class="menu">
+            <%= render partial: "shared/settings" %>
+        </div>
+        <div class="mainbody">
+            <%= form_with model: Current.user, url: settings_path do |form| %>
+                    <table style="width:100%">
+                        <colgroup>
+                            <col span="1" style="width: 25%;">
+                            <col span="1" style="width: 65%;">
+                        </colgroup>
+                    <tr>
+                        <% if Current.user %>
+                            <div class="ProfilePicture">
+                                <%= render partial: "shared/userprofilepic" %>
+                            <div class="Details">
+                                <th><div class="Username"><%= Current.user.username %></div>            
+                            <%= form.file_field :profileimage %>
+                            </th>
+                            </div>
+                        <% end %>
+                    </tr>
+                    <tr>
+                        <td class="align_right">Name</td>
+                        <td>
+                            <%= form.text_field :name , value: Current.user.name, placeholder: "Name" %>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="align_right"></td>
+                        <td>
+                            <p>Help people discover your account by using the name that you're known by: either your full name, nickname or business name.</p>
+                            <p>You can only change your name twice within 14 days.</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="align_right">Username</td>
+                        <td>
+                            <%= form.text_field :username, value: Current.user.username, placeholder: "Username" %>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="align_right"></td>
+                        <td>
+                            <p>In most cases, you'll be able to change your username back to <%= Current.user.username %> for another 14 days. <%= link_to "Learn More", main_path %></p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="align_right">Website</td>
+                        <td><%= form.text_field :website, value: Current.user.website, placeholder: "Website" %></td>
+                    </tr>
+                    <tr>
+                        <td class="align_right">Bio</td>
+                        <td><%= form.text_field :bio, value: Current.user.bio, placeholder: "Bio"  %></td>
+                    </tr>
+                    <tr>
+                        <td class="align_right"></td>
+                        <td>
+                            <p class="bold">Personal information</p>
+                            <p>Provide your personal information, even if the account is used for a business, pet or something else. This won't be part of your public profile.</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="align_right">Email address</td>
+                        <td><%= form.text_field :email, value: Current.user.email, placeholder: "Email Address"  %></td>
+                    </tr>
+                    <tr>
+                        <td class="align_right">Phone number</td>
+                        <td><%= form.text_field :number, value: Current.user.number, placeholder: "Phone Number"  %></td>
+                    </tr>
+                    <tr>
+                        <td class="align_right">Gender</td>
+                        <td><%= form.select :gender, [['Male','male'],['Female','female'],['Other','other']] %></td>
+                    </tr>
+                    <tr>
+                        <td class="align_right"></td>
+                        <td class="changepassword_button"><%= form.submit "Submit" %></td>
+                    </tr>
+                    </table>
+                    <%= render partial: "shared/flash" %>
+                <% end %>
+        </div>
+    </div>
+</div>
+<%= render partial: "shared/footer" %>

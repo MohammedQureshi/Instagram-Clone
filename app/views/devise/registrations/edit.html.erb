@@ -1,0 +1,55 @@
+<%= render partial: "shared/navbar" %>
+<div class="settings">
+    <div class="settings_panel">
+        <div class="menu">
+            <%= render partial: "shared/settings" %>
+        </div>
+        <div class="mainbody">
+            <div>
+                <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
+                    <table style="width:100%">
+                        <colgroup>
+                            <col span="1" style="width: 25%;">
+                            <col span="1" style="width: 65%;">
+                        </colgroup>
+                    <tr>
+                        <% if current_user %>
+                            <div class="ProfilePicture">
+                                <%= render partial: "shared/userprofilepic" %>
+                            <div class="Details">
+                                <th><div class="Username"><%= current_user.username %></div></th>
+                            </div>
+                        <% end %>
+                    </tr>
+					<tr>
+						<td class="align_right">Email</td>
+						<td><%= f.email_field :email, autofocus: true, autocomplete: "email", readonly:"readonly" %></td>
+					</tr>
+                    <tr>
+                        <td class="align_right">Old password</td>
+                        <td><%= f.password_field :current_password %></td>
+                    </tr>
+                    <tr>
+                        <td class="align_right">Password</td>
+                        <td><%= f.password_field :password, autocomplete: "new-password" %></td>
+                    </tr>
+                    <tr>
+                        <td class="align_right">Confirm password</td>
+                        <td><%= f.password_field :password_confirmation, autocomplete: "new-password" %></td>
+                    </tr>
+                    <tr>
+                        <td class="align_right"></td>
+                        <td class="changepassword_button"><%= f.submit"Change Password" %></td>
+                    </tr>
+                    </table>
+                    <%= render partial: "shared/flash" %>
+					    <% if @minimum_password_length %>
+						  <br />
+						  <em><%= @minimum_password_length %> characters minimum</em>
+						<% end %>
+                <% end %>
+            </div>
+        </div>
+    </div>
+</div>
+<%= render partial: "shared/footer" %>

@@ -1,0 +1,59 @@
+.FacebookLogin{
+    width: 100%;
+    text-align: center;
+    background-color: #0095F6;
+    border-radius: 0.2rem;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+.FacebookLogin a{
+    font-weight: 600;
+    color: white;
+    font-size: 14px;
+    margin-top: 2px;
+}
+
+.FacebookLogin{
+    display: flex;
+    justify-content: center;
+}
+
+.FacebookIcon{
+    color: white;
+    padding-right: 5px;
+}
+
+.SignIn h3{
+    text-align: center;
+    color: #8E8E8E;
+    padding-bottom: 15px;
+}
+
+.Terms{
+    padding: 10px;
+    font-size:12px;
+    color: #8E8E8E;
+    font-weight: 400;
+}
+
+.SignUpBody{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin-top: 20px;
+}
+
+.SignUpErrorMessage{
+    color: red;
+    font-size: 12px;
+    font-weight: 400;
+}
+
+ul{
+    list-style: none;
+}
+
+h2{
+    font-size: 10px;
+}

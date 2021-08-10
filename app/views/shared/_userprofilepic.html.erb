@@ -1,0 +1,9 @@
+<% if current_user.profileimage.attached? %>
+    <th class="align_right">
+        <%= image_tag current_user.profileimage %>
+    </th>
+<% else %>
+    <th class="align_right">
+        <%= image_tag("default.jpeg", :alt => "Default Profile Picture") %> 
+    </th>
+<% end %>

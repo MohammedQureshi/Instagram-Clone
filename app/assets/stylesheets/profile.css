@@ -1,0 +1,40 @@
+.Profile{
+    max-width: 293px;
+    width: 100%;
+    margin-top: 75px;
+    display: flex;
+}
+
+.ProfilePicture img{
+    border-radius: 100%;
+    border: 1px solid black;
+    object-fit: cover;
+    width: 50px;
+    height: 50px;
+    margin: 15px;
+}
+
+.Details{
+    margin-top: 22px;
+}
+
+.Username{
+    color: black;
+    font-weight: 600;
+}
+
+.FullName{
+    color: grey;
+}
+
+.SwitchAccounts{
+    margin-top: 30px;
+    margin-left: auto;
+    margin-right: 0;
+}
+
+.SwitchAccounts a{
+    color:#0095F6;
+    font-weight: 600;
+    font-size: 12px;
+}

@@ -1,0 +1,29 @@
+<div class="Header">
+    <div class="InnerHeader">
+        <div class="InstagramLogoMain">
+            <%= link_to image_tag("Instagram_logo.svg", :alt => "InstagramLogo"), main_path %>
+        </div>
+        <div class="SearchTextBox">
+            <%= form_with url: profiles_path do |form| %><%= form.text_field :search, placeholder: "Search" %><%= form.submit "?", class: 'SearchSubmit' %><% end %>
+        </div>
+        <div class="InteractiveButtons">
+            <button><%= link_to '<i class="fas fa-home"></i>'.html_safe, main_path %></i></button>
+            <button><i class="fas fa-location-arrow"></i></button>
+            <button><%= link_to '<i class="far fa-plus-square"></i>'.html_safe, posts_new_path %></i></button>
+            <button><i class="far fa-compass"></i></button>
+            <button><i class="far fa-heart"></i></button>
+            <div class="dropdown">
+                <button>                
+                    <%= render partial: "shared/userprofilepic" %>
+                </button>
+                <div class="dropdown-content">
+                    <div class="menu_item"><%= link_to '<i class="far fa-user-circle"></i> Profile'.html_safe, profile_path(current_user) %></div>
+                    <div class="menu_item"><%= link_to '<i class="far fa-bookmark"></i> Saved'.html_safe, root_path %></div>
+                    <div class="menu_item"><%= link_to '<i class="fas fa-cog"></i> Setting'.html_safe, settings_path %></div>
+                    <div class="menu_item"><%= link_to '<i class="fas fa-redo-alt"></i> Switch Accounts'.html_safe, root_path %></div>
+                    <%= button_to "Logout", destroy_user_session_path, method: :delete %>
+                </div>
+            </div>    
+        </div>
+    </div>
+</div>

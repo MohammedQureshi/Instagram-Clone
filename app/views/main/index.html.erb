@@ -1,0 +1,18 @@
+<%= render partial: "shared/navbar" %>
+<div class="MainFeed">
+    <div class="InstagramPost">
+        <%= render @posts %>
+    </div>
+    <div class="Profile">
+        <% if Current.user %>
+            <div class="ProfilePicture">
+                <%= render partial: "shared/userprofilepic" %>
+            </div>
+            <div class="Details">
+                <div class="Username"><%= Current.user.username %></div>
+                <div class="FullName"><%= Current.user.name %></div>
+            </div>
+            <div class="SwitchAccounts"><%= link_to "Switch", destroy_user_session_path, method: :delete %></div>
+        <% end %>
+    </div>
+</div>

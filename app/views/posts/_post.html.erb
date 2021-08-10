@@ -1,0 +1,55 @@
+    <div class="Post">
+        <div class="user_details">
+            <% if post.user.profileimage.attached? %>
+                <%= image_tag post.user.profileimage %>
+            <% else %>
+                <%= image_tag("default.jpeg", :alt => "Default Profile Picture") %> 
+            <% end %>
+            <p class="bold"><%= link_to post.user.username, profile_path(post.user) %></p>
+            <div class="dropdown">
+                <button><i class="fas fa-ellipsis-h"></i></button>
+                <div class="dropdown-content">
+                <%= form_with model: post do |form| %>
+                    <% if form.object.persisted? %>
+                        <% if post.user === current_user %>
+                            <div class="menu_item"><%= link_to '<i class="far fa-trash-alt"></i> Delete'.html_safe, form.object, method: :delete, data: { confirm: "Are you sure?" } %></div>
+                        <% end %>
+                        <div class="menu_item"><%= link_to '<i class="fas fa-mail-bulk"></i> Go to post'.html_safe, post_path(post) %></div>
+                    <% end %>
+                <% end %>
+                </div>
+            </div>    
+        </div>
+        <% if post.postimage.attached? %>
+            <%= image_tag post.postimage %>
+        <% else %>
+            <%= image_tag("default.jpeg", :alt => "Default Profile Picture") %> 
+        <% end %>
+        <div class="description">
+            <% pre_like = post.likes.find { |like| like.user_id == current_user.id} %>
+            <% if pre_like %>
+                <%= link_to '<i class="fas fa-heart"></i>'.html_safe, post_like_path(post, pre_like), method: :delete, remote: true, style:"color:#ce0000;" %>
+            <% else %>
+                <%= link_to '<i class="far fa-heart"></i>'.html_safe, post_likes_path(post), method: :post, remote: true%>
+            <% end %>
+            <p><%= post.likes.count %> <%= (post.likes.count) == 1 ? 'like' : 'likes'%></p>
+            <div class="details">
+                <p class="bold"><%= link_to post.user.username, profile_path(post.user) %></p>
+                <p><%= post.body %></p>
+            </div>
+        </div>
+        <div class="comment">
+            <% post.comments.order("created_at desc").each do |comment|%>
+                <div class="single-comment">
+                    <p class="bold"><%= link_to comment.user.username, profile_path(comment.user) %></p>
+                    <p><%= comment.body %></p>
+                </div>
+            <% end %>
+        </div>
+        <div>
+            <%= form_for [post, Comment.new(post: post)] do |form| %>
+                <%= form.text_field :body, placeholder: "Add a comment..." %>
+                <%= form.submit "Post" %>
+            <% end %>
+        </div>
+    </div>

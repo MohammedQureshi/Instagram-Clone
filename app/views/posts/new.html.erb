@@ -1,0 +1,8 @@
+<%= render partial: "shared/navbar" %>
+<div class="post">
+    <%= form_with model: @post do |form| %>
+        <%= form.text_field :body, placeholder: "Description" %>
+        <%= form.file_field :postimage %>
+        <%= form.submit "Post" %>
+    <% end %>
+</div>

@@ -1,0 +1,157 @@
+.MainBody{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin-top: 60px;
+    margin-left: -20px;
+}
+
+.login_error{
+    font-size: 12px;
+    color: red;
+    text-align: center;
+    padding-top: 5px;
+    padding-bottom: 0;
+}
+
+input:focus{
+    outline-style: solid;
+    outline-color: grey;
+    outline-width: thin;
+}
+
+.SignIn{
+    margin-top: 30px;
+    border: 1px solid #DBDBDB;
+    padding-left: 50px;
+    padding-right: 50px;
+    width: 250px;
+    margin-left: -15px;
+}
+
+.SignUp{
+    margin-top: 10px;
+    border: 1px solid #DBDBDB;
+    padding-left: 50px;
+    padding-right: 50px;
+    width: 250px;
+    margin-left: -15px;
+}
+
+.SignIn img{
+    width: 200px;
+    justify-content: center;
+    margin-left: 10%;
+    padding-top: 20px;
+    padding-bottom: 5px;
+}
+
+.SignIn input{
+    width: 100%;
+    padding: 10px;
+    max-width: -webkit-fill-available;
+    margin-top: 10px;
+    border: 1px solid #DBDBDB;
+}
+
+.Login input{
+    background-color: #0095F6;
+    cursor: pointer;
+    border-radius: 0.5rem;
+    color: white;
+    font-weight: 800;
+    padding: 8px;
+}
+
+.OrSignIn{
+    display: flex;
+    margin-top: 20px;
+}
+
+.Line{
+    background-color: #DBDBDB;
+    height: 1px;
+    position: relative;
+    top: .45em;
+    flex-grow: 1;
+    -webkit-flex-grow: 1;
+}
+
+.Text{
+    flex-shrink: 0;
+    font-size: 13px;
+    font-weight: 600;
+    line-height: 15px;
+    margin: 0 18px;
+    text-transform: uppercase;
+    color: #858585;
+    font-family: Arial, Helvetica, sans-serif
+}
+
+.LoginWithFacebook{
+    text-align: center;
+    padding: 20px;
+    padding-bottom: 0;
+}
+
+.LoginWithFacebook i{
+    margin-right: 5px;
+    color: #00376B;
+}
+
+.ForgotPassword{
+    text-align: center;
+    padding: 15px;
+    font-size: 12px;
+}
+
+a{
+    text-decoration: none !important;
+    color: #00376B;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.GetTheApp{
+    text-align: center;
+    padding: 20px;
+    font-size: 14px;
+    font-family: Arial, Helvetica, sans-serif;
+    margin-left: -15px;
+}
+
+.PhoneStore img{
+    width: 125px;
+    padding-top: 20px;
+}
+
+.Links{
+    display: flex;
+    justify-content: center;
+    padding: 70px;
+    padding-bottom: 0;
+}
+
+.Links p{
+    padding: 10px;
+    font-size: 12px;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #868686;
+}
+
+.Copyright{
+    display: flex;
+    justify-content: center;
+}
+
+.Copyright select{
+    border: none;
+    background: none;
+    color: #868686;
+}
+
+.Copyright p{
+    font-size: 12px;
+    padding: 5px;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #868686;
+}

@@ -1,0 +1,71 @@
+.settings{
+    padding-top: 85px;
+    max-width: 950px;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+
+    .settings_panel{
+        border: 1px solid rgb(216, 216, 216);
+        display: flex;
+        width: 100%;
+        .menu{
+            max-width: 250px;
+            width: 100%;
+            border-right: 1px solid rgb(216, 216, 216);
+            .menu_item{
+                padding: 20px;
+    
+                a{
+                    font-weight: 600;
+                    color:black
+                }
+    
+                a:hover{
+                    color:rgb(65, 65, 65)
+                }
+    
+                .stpa{
+                    margin-top: -20px;
+                    a{
+                        color: #0095F6;
+                        font-size: 12px;
+                    }
+                }
+            }
+        }
+
+    }
+
+    .mainbody{
+        max-width: 700px;
+        width: 100%;
+        padding-right: 130px;
+        p{
+            font-size: 12px;
+            color: grey;
+            padding: 10px 0;
+        }
+        .bold{
+            font-weight: 600;
+            padding: 0;
+            padding-top: 10px;
+            font-size: 14px;
+        }
+        .Username{
+            font-weight: 100;
+        }
+        a{
+            color: #0095f6;
+        }
+        select{
+            width: 96%;
+            padding: 10px;
+            margin-top: 10px;
+            border: 1px solid #c3c3c3;
+            background: white;
+            border-radius: 0.25rem;
+        }
+    }
+}

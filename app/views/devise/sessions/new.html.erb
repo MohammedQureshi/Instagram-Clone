@@ -1,0 +1,35 @@
+<%= stylesheet_link_tag "signin" %>
+<div class="MainBody">
+    <div class="AnimatedImage">
+        <img src="https://www.instagram.com/static/images/homepage/home-phones.png/43cc71bb1b43.png" alt="Iphone"/>
+    </div>
+    <div class="LoginArea">
+        <div class="SignIn">
+            <%= image_tag("Instagram_logo.svg", :alt => "InstagramLogo") %>
+            <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+                <div><%= f.email_field :email, autofocus: true, placeholder: "Phone number, username, or email", autocomplete: "email" %></div>
+                <div><%= f.password_field :password, placeholder: "Password", autocomplete: "current-password" %></div>
+                <div class="Login"><%= f.submit "Log in" %></div>
+               <%= render "devise/shared/error_messages", resource: resource %>
+                <div class="OrSignIn">
+                    <div class="Line"></div>
+                    <div class="Text">OR</div>
+                    <div class="Line"></div>
+                </div>
+                <div class="LoginWithFacebook"><i class="fab fa-facebook-square"></i><%= link_to "Log in with Facebook", "/" %></div>
+                <div class="ForgotPassword"><%= link_to "Forgot password?", new_password_path(resource_name) %></div>
+            <% end %>
+        </div>
+        <div class="SignUp">
+            <div class="ForgotPassword">Don't have an account? <%= link_to "Sign Up", new_registration_path(resource_name) %></div>
+        </div>
+        <div class="GetTheApp">
+            <p>Get the app.</p>
+            <div class="PhoneStore">
+                <a href="https://apps.apple.com/app/instagram/id389801252?vt=lo" target="_blank"><img src="https://instagram.com/static/images/appstore-install-badges/badge_ios_english-en.png/180ae7a0bcf7.png" /></a>
+                <a href="https://play.google.com/store/apps/details?id=com.instagram.android" target="_blank"><img src="https://instagram.com/static/images/appstore-install-badges/badge_android_english-en.png/e9cd846dc748.png" /></a>
+            </div>
+        </div>
+    </div>
+</div>
+<%= render partial: "shared/footer" %>

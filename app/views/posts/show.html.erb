@@ -1,0 +1,32 @@
+<%= render partial: "shared/navbar" %>
+<div class="view_fullposts">
+    <div class="view_border">
+        <div class="view_image">
+            <% if @post.postimage.attached? %>
+                <%= image_tag @post.postimage %>
+            <% end %>
+        </div>
+        <div class="view_content">
+            <div class="view_profileinfo">
+                <% if @post.user.profileimage.attached? %>
+                    <%= image_tag @post.user.profileimage %>
+                <% else %>
+                    <%= image_tag("default.jpeg", :alt => "Default Profile Picture") %> 
+                <% end %>
+                <p class="bold"><%= @post.user.username %></p>
+            </div>
+            <div class="view_userpostinfo">
+                <p class="bold"><%= @post.user.username %></p>
+                <p><%= @post.body %></p>
+            </div>
+            <div class="view_comment">
+                <% @post.comments.order("created_at desc").each do |comment|%>
+                    <div class="single-comment">
+                        <p class="bold"><%= comment.user.username %></p>
+                        <p><%= comment.body %></p>
+                    </div>
+                <% end %>
+            </div>
+        </div>
+    </div>
+</div>
